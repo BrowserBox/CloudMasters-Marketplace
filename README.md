@@ -31,7 +31,7 @@ We unify the cloud market. Instead of navigating complex web portals, CloudMaste
 ### 1. The Market: Find the Best Deal
 Stop guessing if Hetzner is cheaper than AWS for your specific RAM/CPU needs. CloudMasters indexes offers from all provider APIs and caches them locally (SQLite) for instant searching.
 
-![The Market View](PATH_TO_SCREENSHOT_3_MARKET.png)
+![The Market View](market-offers.png)
 
 *   **Global Search:** Filter by Cloud, Region, RAM, CPU Arch, and Price.
 *   **Live Sorting:** Instantly see who has the cheapest `2vCPU / 8GB RAM` instance.
@@ -41,12 +41,12 @@ Stop guessing if Hetzner is cheaper than AWS for your specific RAM/CPU needs. Cl
 ### 2. Rent-A-Box: Instant Provisioning
 Once you find the box you want, rent it with a single keystroke. No 12-step wizards, no up-selling pages. Just confirm the specs and go.
 
-![Rent A Box Modal](PATH_TO_SCREENSHOT_2_RENT.png)
+![Rent A Box Modal](rent-a-box.png)
 
 ### 3. The Dashboard: Unified Management
 Your active servers appear here, normalized across all providers. A Hetzner box looks just like an EC2 instance.
 
-![Dashboard View](PATH_TO_SCREENSHOT_1_DASHBOARD.png)
+![Dashboard View](main-dash.png)
 
 *   **Unified Actions:** `(s)` SSH, `(p)` Power/Reboot, `(d)` Delete/Nuke.
 *   **Activity Log:** See that green text at the bottom? That is your **audit trail**. Every command CloudMasters runs on your behalf is logged to a daily gzipped file. You always know exactly what happened.
