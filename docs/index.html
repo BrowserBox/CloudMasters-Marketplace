@@ -258,7 +258,7 @@
         }
 
         .install-code {
-            display: inline-block;
+            display: block;
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.9rem;
             background: var(--code-bg);
@@ -266,7 +266,10 @@
             padding: 0.5rem 0.75rem;
             border-radius: 0.5rem;
             border: 1px solid var(--border);
-            white-space: nowrap;
+            white-space: normal;
+            word-break: break-word;
+            overflow-wrap: anywhere;
+            max-width: 100%;
         }
 
         .inline-link {
