@@ -1,0 +1,46 @@
+# Helmsman Installer (Windows)
+# Downloads the binary to ~/.helmsman/bin and adds to PATH
+
+$ErrorActionPreference = "Stop"
+
+$Repo = "BrowserBox/Helmsman-TUI"
+$InstallDir = "$env:USERPROFILE\.helmsman\bin"
+$Asset = "helmsman_windows_amd64.exe"
+
+# Create install directory
+if (-not (Test-Path $InstallDir)) {
+    New-Item -ItemType Directory -Path $InstallDir -Force | Out-Null
+}
+
+# Fetch latest release info
+Write-Host "Fetching latest release info..."
+$ReleaseUrl = "https://api.github.com/repos/$Repo/releases/latest"
+try {
+    $Release = Invoke-RestMethod -Uri $ReleaseUrl
+} catch {
+    Write-Error "Failed to fetch release info: $_"
+}
+
+$Tag = $Release.tag_name
+$DownloadUrl = "https://github.com/$Repo/releases/download/$Tag/$Asset"
+$OutputPath = "$InstallDir\helmsman.exe"
+
+Write-Host "Downloading Helmsman $Tag..."
+try {
+    Invoke-WebRequest -Uri $DownloadUrl -OutFile $OutputPath
+} catch {
+    Write-Error "Failed to download binary: $_"
+}
+
+# Add to PATH if not already present
+$UserPath = [Environment]::GetEnvironmentVariable("Path", "User")
+if ($UserPath -notlike "*$InstallDir*") {
+    Write-Host "Adding to PATH..."
+    [Environment]::SetEnvironmentVariable("Path", "$UserPath;$InstallDir", "User")
+    $env:Path += ";$InstallDir"
+    Write-Host "Added to PATH. You may need to restart your terminal."
+}
+
+Write-Host ""
+Write-Host "Helmsman installed successfully!"
+Write-Host "Run 'helmsman' to start."
