@@ -884,7 +884,7 @@
                 <a href="#pricing">Pricing</a>
                 <a href="#faq">FAQ</a>
                 <a href="https://github.com/BrowserBox/BlueDot-CLI">GitHub</a>
-                <a href="#pricing" class="nav-cta">Try Free →</a>
+                <a href="#install" class="nav-cta">Try Free →</a>
             </div>
         </div>
     </nav>
@@ -914,7 +914,7 @@
             </div>
 
             <div class="cta-buttons">
-                <a href="#pricing" class="btn btn-primary btn-large">Start Free Trial →</a>
+                <a href="#install" class="btn btn-primary btn-large">Start Free Trial →</a>
                 <a href="#demo" class="btn btn-secondary btn-large">▶ Watch Demo</a>
             </div>
             <p class="cta-subtext">24-hour free trial • <strong>No credit card required</strong> • All sales final</p>
@@ -991,31 +991,56 @@
     <section id="install" class="install-section">
         <div class="container" style="text-align: center;">
             <h2 style="font-size: 2.5rem;">Install In Seconds</h2>
-            <p class="subtitle">Clean installers for every platform. Up and running in under a minute.</p>
-            <div class="install-grid">
-                <div class="install-card">
-                    <h3>🍎 macOS</h3>
-                    <p>Signed .pkg installer with automatic updates.</p>
-                    <a class="inline-link" href="https://github.com/BrowserBox/BlueDot-CLI/releases/latest">Download .pkg →</a>
-                </div>
-                <div class="install-card">
-                    <h3>🪟 Windows</h3>
-                    <p>GUI installer or PowerShell one-liner.</p>
-                    <a class="inline-link" href="https://github.com/BrowserBox/BlueDot-CLI/releases/latest">Download .exe →</a>
-                </div>
-                <div class="install-card">
-                    <h3>🐧 Linux</h3>
-                    <p>Tarball for any distro. Drop in PATH and go.</p>
-                    <a class="inline-link" href="https://github.com/BrowserBox/BlueDot-CLI/releases/latest">Download .tar.gz →</a>
-                </div>
+            <p class="subtitle">Get up and running with a single command. It's that easy.</p>
+            
+            <div class="install-card" style="max-width: 650px; margin: 2rem auto; text-align: center; border: 2px solid var(--accent); background: var(--bg-secondary); box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);">
+                <details id="install-expander" class="install-details" style="border: none; background: transparent; padding: 1.5rem;">
+                    <summary style="font-size: 1.35rem; font-weight: 700; color: var(--accent); list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                        <span>🚀</span> Reveal the 1-Minute Setup
+                    </summary>
+                    
+                    <div style="text-align: left; margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 2rem;">
+                        <div style="margin-bottom: 2.5rem;">
+                            <h3 style="margin-bottom: 0.75rem; font-size: 1.2rem; display: flex; align-items: center; gap: 0.5rem;">
+                                <span style="background: var(--accent); color: white; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.8rem;">1</span>
+                                Run the Installer
+                            </h3>
+                            <p style="margin-bottom: 1rem; color: var(--text-secondary); font-size: 0.95rem;">Paste this into your terminal (just like installing Claude or Vercel):</p>
+                            
+                            <div style="margin-bottom: 1.25rem;">
+                                <p style="font-weight: 600; margin-bottom: 0.5rem; font-size: 0.75rem; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 0.05em;">macOS / Linux</p>
+                                <div class="install-code" style="background: var(--code-bg); padding: 1rem; border-radius: 0.5rem; border: 1px solid var(--border); font-size: 0.9rem; position: relative;">
+                                    curl -fsSL https://bluedot.browserbox.io/install.sh | bash
+                                </div>
+                            </div>
+
+                            <div>
+                                <p style="font-weight: 600; margin-bottom: 0.5rem; font-size: 0.75rem; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 0.05em;">Windows (PowerShell)</p>
+                                <div class="install-code" style="background: var(--code-bg); padding: 1rem; border-radius: 0.5rem; border: 1px solid var(--border); font-size: 0.9rem;">
+                                    irm https://bluedot.browserbox.io/install.ps1 | iex
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <h3 style="margin-bottom: 0.75rem; font-size: 1.2rem; display: flex; align-items: center; gap: 0.5rem;">
+                                <span style="background: var(--accent); color: white; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.8rem;">2</span>
+                                Sign In / Sign Up
+                            </h3>
+                            <p style="margin-bottom: 1rem; color: var(--text-secondary); font-size: 0.95rem;">Once the installer finishes, simply run the login command to authenticate:</p>
+                            <div class="install-code" style="background: var(--code-bg); padding: 1rem; border-radius: 0.5rem; border: 1px solid var(--border); font-size: 0.9rem; font-weight: 700;">
+                                bluedot login
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 3rem; text-align: center; padding: 1rem; background: rgba(74, 222, 128, 0.1); border-radius: 0.5rem; border: 1px solid var(--success);">
+                            <p style="font-weight: 700; color: var(--success); font-size: 1.1rem;">✨ You're all set! Launch BlueDot and start saving.</p>
+                        </div>
+                    </div>
+                </details>
             </div>
-            <details class="install-details">
-                <summary>🚀 Prefer one-line installers?</summary>
-                <p>For headless machines, CI/CD, or quick automation:</p>
-                <div class="install-code">curl -fsSL https://bluedot.browserbox.io/install.sh | bash</div>
-                <div style="height: 0.75rem;"></div>
-                <div class="install-code">irm https://bluedot.browserbox.io/install.ps1 | iex</div>
-            </details>
+
+            <p class="cta-subtext" style="margin-top: 1.5rem;">Looking for manual downloads? <a href="https://github.com/BrowserBox/BlueDot-CLI/releases/v6.1.0" class="inline-link">Version 6.1.0 available on GitHub</a></p>
         </div>
     </section>
 
@@ -1079,7 +1104,7 @@
                         <li>1 device activation</li>
                         <li>Community support</li>
                     </ul>
-                    <a href="#" class="btn btn-secondary">Start 24-Hour Trial</a>
+                    <a href="#install" class="btn btn-secondary">Start 24-Hour Trial</a>
                 </div>
                 
                 <div class="pricing-card featured">
@@ -1095,7 +1120,7 @@
                         <li>Early access to new providers</li>
                         <li>50% off future major versions</li>
                     </ul>
-                    <a href="#" class="btn btn-primary">Start 24-Hour Trial</a>
+                    <a href="#install" class="btn btn-primary">Start 24-Hour Trial</a>
                 </div>
                 
                 <div class="pricing-card">
@@ -1234,7 +1259,7 @@
             <h2>Ready to Take Control?</h2>
             <p class="subtitle">Join hundreds of developers managing their clouds faster.</p>
             <div class="cta-buttons">
-                <a href="#pricing" class="btn btn-primary btn-large">Start Your Free Trial →</a>
+                <a href="#install" class="btn btn-primary btn-large">Start Your Free Trial →</a>
             </div>
             <p class="cta-subtext">24-hour trial • No credit card • All sales final</p>
         </div>
@@ -1251,5 +1276,34 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Handle the expander and smooth scroll for install CTAs
+        document.querySelectorAll('a[href="#install"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                const expander = document.getElementById('install-expander');
+                
+                if (targetElement) {
+                    // Open the expander
+                    if (expander) {
+                        expander.open = true;
+                    }
+                    
+                    // Smooth scroll to the target
+                    // Use a small timeout to allow the browser to calculate the new height after opening the details
+                    setTimeout(() => {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
+                        });
+                    }, 50);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
